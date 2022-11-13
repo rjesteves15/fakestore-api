@@ -1,0 +1,28 @@
+.nav__container {
+    height: 10vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    margin: 0px 100px 0 100px;
+
+    .nav__link ul {
+        display: flex;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+
+        a {
+            text-decoration: none;
+            display: inline-block;
+            padding: 1rem;
+            color: #000;
+          }
+
+          a.active {
+            background-color: #eee;
+          }
+      }
+    
+   
+}
