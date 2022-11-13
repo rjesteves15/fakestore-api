@@ -1,14 +1,9 @@
 import React, { useState, useEffect}from 'react';
+import useFetch from '../../useFetch';
 import './home.scss'
 
 function Home() {
-  const [data, setData] = useState([]);
-
-  useEffect(() => {
-    fetch("https://fakestoreapi.com/products")
-    .then(res => res.json())
-    .then(data => setData(data))
-  })
+  const [data] = useFetch("https://fakestoreapi.com/products")
 
 
   return (
@@ -16,7 +11,7 @@ function Home() {
 
 
         <div className='data__container'>
-            {
+            { 
               data.map((item, index) => (
                   <img key={index} src={item.image}/>   
               ))
