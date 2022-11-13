@@ -15,9 +15,6 @@ function Navigation() {
             <li> 
                 <Link to="/" activeClassName="active"> Home</Link>
             </li>
-            <li> 
-                <Link to="/product" activeClassName="active"> Product</Link>
-            </li>
             <li>
                 <Link to="/cart" activeClassName="active"> Cart</Link>
             </li>
