@@ -11,17 +11,25 @@ function Home() {
     <div className='home__container'>
 
 
-        <div className='data__container'>
-            { 
-              data.map((item, index) => (
-                <>
-                  <img key={index} src={item.image}/>   
-                  <br />
-                  <Link to={`/product/${item.id}`} >View Details</Link>
-                </>
-              ))
-            }
-        </div>
+<div className="data__container">
+        {data.map((item, index) => {
+          const { id, price, image, title, rating } = item;
+
+          return (
+            <div className="card">
+              <img key={index} src={item.image} />
+
+              <div className="item__information">
+                {/* <p>{title}</p> */}
+                <h3>${price}</h3>
+                <Link to={`/product/${item.id}`}>
+                    View 
+                </Link>
+              </div>
+            </div>
+          );
+        })}
+      </div>
     </div>
   )
 }
