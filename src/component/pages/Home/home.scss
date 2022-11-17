@@ -6,14 +6,13 @@
         justify-content: center;
         margin: 20px;
   
-        a {
+        button {
             border: none;
             padding: 10px;
             margin: 5px;
             font-size: 14pt;
-            text-decoration: none;
         }
-        a:hover {
+        button:hover {
             background-color: antiquewhite;
         }
     }
@@ -48,7 +47,7 @@
             }
                 img {
                     height: 350px;
-                    width: 300px;
+                    width: 250px;
                 }
              
                 
