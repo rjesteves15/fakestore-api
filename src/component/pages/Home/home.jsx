@@ -5,23 +5,25 @@ import './home.scss'
 
 function Home() {
   const [newData, setNewData] = useState([]);
-  const [viewItem, setViewItem] = useState("")
   const [data] = useFetch("https://fakestoreapi.com/products");
-
   const [category] = useFetch("https://fakestoreapi.com/products/categories")
 
-  const handleCategory = () => {
-      fetch(`https://fakestoreapi.com/products/category/${viewItem}`)
+  const handleCategory = (items) => {
+      fetch(`https://fakestoreapi.com/products/category/${items}`)
       .then(res => res.json())
       .then(data => setNewData(data));
   }
 
+  const handleViewAll = () => {
+      setNewData(data)
+  }
   return (
     <div className='home__container'>
 
     <div className="category__container">
-            {category.map((i) => (
-              <button onClick={() => handleCategory(setViewItem(i))}>{i}</button>
+            <button onClick={handleViewAll}>All</button>
+            {category.map((items) => (
+              <button onClick={() => handleCategory(items)}>{items}</button>
             ))}
           </div>
 
