@@ -1,24 +1,23 @@
-.home__container {
-
+.home__container { 
     .category__container {
         display: flex;
-        align-items: center;
+        text-align: center;
         justify-content: center;
-        margin: 20px;
-  
         button {
             border: none;
             padding: 10px;
             margin: 5px;
             font-size: 14pt;
-        }
+            text-decoration: none;
+        }       
         button:hover {
             background-color: antiquewhite;
         }
-    }
-  
-  
-    .data__container {
+    } 
+  .data__container {
+    display: flex;
+    .left__container {
+        width: 80%;
         align-items: center;
         display: flex;
         justify-content: center;
@@ -31,13 +30,11 @@
             border-radius: 5px;
             padding: 20px;
             margin: 10px;
-  
             .item__information{
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
-                text-align: center;
-                   
+                text-align: center;             
                 a {
                     margin-top: 10px;
                     text-align: center;
@@ -45,21 +42,54 @@
                     color: #000;
                 }
             }
-                img {
-                    height: 350px;
-                    width: 250px;
+            img {
+                    height: 250px;
+                    width: 200px;
                 }
-             
-                
             }
-            
             .card:hover {
                 box-shadow: 5px 5px #000;
                 a {
                     color: red;
+                }   
+               } 
+        }
+    }
+
+    .right__container {
+        position: -webkit-sticky;
+        position: sticky;
+        top: 0;
+        width: 20%;
+        margin: 10px;
+            img {
+                height: 200px;
+                width: 200px;
+            }
+            .noDetails {
+                text-align: center;
+                font-size: 12pt;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100%;
+            }
+            .withDetails {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                margin: 0px 10px 20px 10px;
+                h2 {
+                    font-size: 14pt;
                 }
-    
-               }
-        
+                .description {
+                    text-align: justify;
+                }
+  
+                button {
+                    width: 100%;
+                }
+            }     
     }
   }   
