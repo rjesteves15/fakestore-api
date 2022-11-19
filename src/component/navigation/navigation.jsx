@@ -2,7 +2,7 @@ import React from 'react';
 import { NavLink as Link } from "react-router-dom";
 import './navigation.scss'
 
-function Navigation() {
+function Navigation({itemCount}) {
   return (
     <div className='nav__container'>
         <div className='nav__logo'>
@@ -13,10 +13,10 @@ function Navigation() {
           
           <ul>
             <li> 
-                <Link to="/" activeClassName="active"> Home</Link>
+                <Link to="/" activeclassname="active"> Home</Link>
             </li>
             <li>
-                <Link to="/cart" activeClassName="active"> Cart</Link>
+                <Link to="/cart" activeclassname="active"> Cart<span>{itemCount}</span></Link>
             </li>
           </ul>
           

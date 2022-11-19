@@ -12,6 +12,14 @@
         margin: 0;
         padding: 0;
 
+        span {
+          background-color: red;
+          position: absolute;
+          padding: 1px;
+          border-radius: 40%;
+          margin: -11px -4px 1px 2px;
+          font-size: 13pt;
+        }
         a {
             text-decoration: none;
             display: inline-block;

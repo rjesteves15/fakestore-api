@@ -3,12 +3,12 @@ import { NavLink as Link } from "react-router-dom";
 import useFetch from '../../useFetch';
 import './home.scss'
 
-function Home() {
+function Home({addToCart, viewDetails, details, setDetails}) {
   const [newData, setNewData] = useState([]);
   const [data] = useFetch("https://fakestoreapi.com/products");
   const [category] = useFetch("https://fakestoreapi.com/products/categories")
 
-  const [details, setDetails] = useState([]);
+
 
   const handleCategory = (items) => {
       fetch(`https://fakestoreapi.com/products/category/${items}`)
@@ -17,19 +17,14 @@ function Home() {
   }
 
   const handleViewAll = () => {
-      setNewData(data)
-  }
-
-  const viewDetails = (id) => {
-    fetch(`https://fakestoreapi.com/products/${id}`)
-      .then((res) => res.json())
-      .then((data) => setDetails(data));
+    setNewData(data);
   };
+
   return (
     <div className='home__container'>
 
         <div className="category__container">
-            <button onClick={handleViewAll}>All</button>
+           <button onClick={handleViewAll}>All</button>
             {category.map((items) => (
               <button onClick={() => handleCategory(items)}>{items}</button>
             ))}
@@ -87,7 +82,7 @@ function Home() {
                   <img src={details.image} />
                   <p>${details.price}</p>
                   <p className="description">{details.description}</p>
-                  <button>Add to Cart</button>
+                  <button onClick={() => addToCart(details)}>Add to Cart</button>
                 </div>
               )}
           </div> 
