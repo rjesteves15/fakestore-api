@@ -8,13 +8,36 @@ import Product from './component/pages/Products/product';
 
 function App() {
 
+  const [details, setDetails] = useState([]);
+
+
+  const [itemCount, setItemCount] = useState(0);
+  const [cartItem, setCartItem] = useState([])
+  
+
+
+
+  const viewDetails = (id) => {
+    fetch(`https://fakestoreapi.com/products/${id}`)
+      .then((res) => res.json())
+      .then((data) => setDetails(data));
+  };
+
+
+  const addToCart = (details) =>{
+    setItemCount(cartItem.length + 1)
+    setCartItem(i => [...i, details])
+
+  }
+
   return (
       <BrowserRouter>
-          <Navigation />
+          <Navigation itemCount={itemCount}/>
           <Routes>
-                <Route path='/' element={<Home />} />
+                <Route path='/' element={<Home addToCart={addToCart} viewDetails={viewDetails} 
+                details={details} setDetails={setDetails}/>} />
                 <Route path='/product/:id' element={<Product />}/>
-                <Route path='/cart' element={<Cart />}/>
+                <Route path='/cart' element={<Cart cartItem={cartItem}/>}/>
           </Routes>
       </BrowserRouter>
   )
