@@ -1,8 +1,21 @@
 .cart__container {
-    h1 {
-        font-size: 14pt;
+    margin: 80px 80px;
+    table {
+        width: 100%;
+        text-align: center;
+        th {
+            border: 1px solid;
+            background-color: gray;
+        }
+        td {
+            border: 1px solid;
+        }
+        img {
+            width: 80px;
+        }  
     }
-    img {
-        width: 50px;
+    .total__price {
+        display: flex;
+        justify-content: space-between;
     }
 }

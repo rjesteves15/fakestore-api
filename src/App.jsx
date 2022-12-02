@@ -13,6 +13,8 @@ function App() {
 
   const [itemCount, setItemCount] = useState(0);
   const [cartItem, setCartItem] = useState([])
+
+  const [total, setTotal] = useState([])
   
 
 
@@ -27,8 +29,10 @@ function App() {
   const addToCart = (details) =>{
     setItemCount(cartItem.length + 1)
     setCartItem(i => [...i, details])
-
+    setTotal(price => [...price, details.price])
   }
+
+
 
   return (
       <BrowserRouter>
@@ -37,7 +41,7 @@ function App() {
                 <Route path='/' element={<Home addToCart={addToCart} viewDetails={viewDetails} 
                 details={details} setDetails={setDetails}/>} />
                 <Route path='/product/:id' element={<Product />}/>
-                <Route path='/cart' element={<Cart cartItem={cartItem}/>}/>
+                <Route path='/cart' element={<Cart cartItem={cartItem} total={total}/>}/>
           </Routes>
       </BrowserRouter>
   )
